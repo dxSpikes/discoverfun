@@ -1,0 +1,102 @@
+#highlight-tabs,#feature-tabs,#discoverfun-tabs,.discovrfun-tab{
+    margin:2em 0 0 0;
+    padding:0;
+    list-style:none;
+    clear:both;
+    overflow:hidden;
+    display:block;
+}
+
+#highlight-tabs li,#feature-tabs li,#discoverfun-tabs li,.discovrfun-tab li {
+    float:left;
+    height:30px;
+    margin-right:3px;
+
+}
+
+#highlight-tabs a,#feature-tabs a,#discoverfun-tabs a,.discovrfun-tab a {
+    padding:0 10px;
+    display:block;
+    height:30px;
+    line-height:30px;
+    text-decoration:none;
+    font-weight:bold;
+    border:solid 1px #ccc;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+#highlight-tabs a.selected,#feature-tabs a.selected,#discoverfun-tabs a.selected,.discovrfun-tab a.selected {
+    border:solid 1px red;
+    background:red;
+    color:white;
+}
+
+#tabs-wrapper {
+    margin-top:-5px;
+    padding-top:2em;
+    border-top:solid 1px #ccc;
+}
+
+#tabs-wrapper .tabs{
+    display:none;
+}
+
+#tabs-wrapper .tabs.active {
+    display:block;
+}
+ul.action {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    font-size: 10px;
+    padding:0;
+    margin:0;
+}
+
+ul.action li {
+    float:left;
+    padding:0 5px;
+}
+ul.action li.cancel {
+   display:none;
+}
+
+ul.banner-xpyr-date {
+    padding:0;
+    margin:0;
+}
+.banner-ul{
+    padding:0;
+    margin:0;
+    clear:both;
+    display:none;
+}
+.banner-ul li {
+    float:left;
+}
+
+#home,#hotel,#restaurant,#resort,#listing{
+    width:195px;
+}
+
+.image-tble {
+    padding:0;
+    margin:0;
+}
+.image-tble th,.image-tble td{
+    vertical-align: top;
+    text-align:left;
+}
+
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <title>Find latitude and longitude with Google Maps</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAgrj58PbXr2YriiRDqbnL1RSqrCjdkglBijPNIIYrqkVvD1R4QxRl47Yh2D_0C1l5KXQJGrbkSDvXFA"
+      type="text/javascript"></script>
+    <script type="text/javascript">
+
+ function load() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"));
+        map.addControl(new GSmallMapControl());
+        map.addControl(new GMapTypeControl());
+        var center = new GLatLng(48.89364,      2.33739);
+        map.setCenter(center, 15);
+        geocoder = new GClientGeocoder();
+        var marker = new GMarker(center, {draggable: true});  
+        map.addOverlay(marker);
+        document.getElementById("lat").innerHTML = center.lat().toFixed(5);
+        document.getElementById("lng").innerHTML = center.lng().toFixed(5);
+
+      GEvent.addListener(marker, "dragend", function() {
+       var point = marker.getPoint();
+          map.panTo(point);
+       document.getElementById("lat").innerHTML = point.lat().toFixed(5);
+       document.getElementById("lng").innerHTML = point.lng().toFixed(5);
+
+        });
+
+
+     GEvent.addListener(map, "moveend", function() {
+          map.clearOverlays();
+    var center = map.getCenter();
+          var marker = new GMarker(center, {draggable: true});
+          map.addOverlay(marker);
+          document.getElementById("lat").innerHTML = center.lat().toFixed(5);
+       document.getElementById("lng").innerHTML = center.lng().toFixed(5);
+
+
+     GEvent.addListener(marker, "dragend", function() {
+      var point =marker.getPoint();
+         map.panTo(point);
+      document.getElementById("lat").innerHTML = point.lat().toFixed(5);
+         document.getElementById("lng").innerHTML = point.lng().toFixed(5);
+
+        });
+ 
+        });
+
+      }
+    }
+
+
+    </script>
+</head>
+
+  
+<body onload="load()" onunload="GUnload()" >
+
+ <p align="left">
+ 
+ <table  bgcolor="#FFFFCC" width="300">
+  <tr>
+    <td><b>Latitude</b></td>
+    <td><b>Longitude</b></td>
+  </tr>
+  <tr>
+    <td id="lat"></td>
+    <td id="lng"></td>
+  </tr>
+</table>
+ </p>
+  <p>
+  <div align="center" id="map" style="width: 600px; height: 400px"><br/></div>
+   </p>
+  </div>
+
+</body>
+
+</html>
